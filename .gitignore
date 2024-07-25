@@ -1,11 +1,10 @@
-echo "
 # Node.js
 node_modules/
 npm-debug.log
 yarn-error.log
 
 # Logs
-logs
+logs/
 *.log
 
 # IDEs and Editors
@@ -22,4 +21,11 @@ dist/
 # Frontend
 frontend/node_modules/
 frontend/build/
-" > .gitignore
+
+# Backend
+backend/node_modules/
+backend/build/
+
+# Ignore lock files
+**/package-lock.json
+**/yarn.lock

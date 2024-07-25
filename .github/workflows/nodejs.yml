@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [main] # Utilisez 'master' si c'est votre branche principale
+    branches: ["master"]
   pull_request:
-    branches: [main] # Utilisez 'master' si c'est votre branche principale
+    branches: ["master"]
 
 jobs:
   build:
@@ -20,5 +20,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm test
+      - run: cd backend && npm install
+      - run: cd backend && npm test
+      - run: cd ../frontend && npm install
+      - run: cd ../frontend && npm test
