@@ -1,11 +1,10 @@
-echo "
 name: Node.js CI
 
 on:
   push:
-    branches: [ main ] # Utilisez 'master' si c'est votre branche principale
+    branches: [main] # Utilisez 'master' si c'est votre branche principale
   pull_request:
-    branches: [ main ] # Utilisez 'master' si c'est votre branche principale
+    branches: [main] # Utilisez 'master' si c'est votre branche principale
 
 jobs:
   build:
@@ -17,10 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js \${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: \${{ matrix.node-version }}
+          node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
-" > .github/workflows/nodejs.yml
